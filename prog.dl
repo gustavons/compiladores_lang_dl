@@ -1,0 +1,8 @@
+programa teste inicio
+	inteiro a; inteiro b;
+	a = 0; b = 10;
+	se (a <= 0 | b <= 0)
+		a = 100;
+	escreva(a);
+fim.
+
