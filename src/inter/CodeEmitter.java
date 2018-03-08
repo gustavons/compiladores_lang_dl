@@ -87,6 +87,16 @@ public final class CodeEmitter {
 				+ CodeEmitter.codeType(id.type()) + " "
 				+ id + ") ; var " + id );
 	}
+	public void emitRead(Expr id) {
+//		String str = "[4 x i8], [4 x i8]* @str_print_int";
+//		if ( id.type() == Token.REAL )
+//			str = "[7 x i8], [7 x i8]* @str_print_double";
+//		Temp tPrint = new Temp(id.type());
+//		emit( tPrint + " = call i32 (i8*, ...) @printf(i8* getelementptr inbounds"
+//				+ "(" + str + ", i32 0, i32 0), "
+//				+ CodeEmitter.codeType(id.type()) + " "
+//				+ id + ") ; var " + id );
+	}
 
 	/*public static String codeType(Token type) {
 		if ( type == Token.BOOL )

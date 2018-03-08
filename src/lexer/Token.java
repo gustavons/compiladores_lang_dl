@@ -6,6 +6,7 @@ public class Token {
 	public static final Token BEGIN = new Token(Tag.BEGIN, "inicio");
 	public static final Token END = new Token(Tag.END, "fim");
 	public static final Token WRITE = new Token(Tag.WRITE, "escreva");
+	public static final Token READ = new Token(Tag.WRITE, "leia");
 	public static final Token IF = new Token(Tag.IF, "se");
 	public static final Token TRUE = new Token(Tag.TRUE, "verdadeiro");
 	public static final Token FALSE = new Token(Tag.FALSE, "falso");	
