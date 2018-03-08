@@ -13,6 +13,7 @@ import inter.stmt.Block;
 import inter.stmt.Decl;
 import inter.stmt.If;
 import inter.stmt.Program;
+import inter.stmt.Read;
 import inter.stmt.Stmt;
 import inter.stmt.Write;
 import lexer.Lexer;
@@ -121,6 +122,13 @@ public class Parser {
 		Id id = findId( match(Tag.ID) );
 		match(Tag.RPAREN);
 		return new Write(id);
+	}
+	private Stmt readStmt() {
+		move();
+		match(Tag.LPAREN);
+		Id id = findId( match(Tag.ID) );
+		match(Tag.RPAREN);
+		return new Read(id);
 	}
 
 	private Stmt assign() {

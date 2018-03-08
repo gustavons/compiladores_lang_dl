@@ -17,7 +17,7 @@ ARITH  				::= ARITH + TERM | ARITH - TERM | TERM | POW
 POW					::= TERM ** POW | TERM
 TERM				::= TERM * UNARY | UNARY
 UNARY				::= - UNARY | FACTOR
-FACTOR				::= (EXPR) | ID | LIT_INT | LIT_REAL | LIT_BOOL | LIT_CIEN
+FACTOR				::= (EXPR) | ID | LIT_INT | LIT_REAL | LIT_BOOL 
 
 Definições Regulares
 LETTER		::= a | b | ... | z | A | B | ... Z | _
