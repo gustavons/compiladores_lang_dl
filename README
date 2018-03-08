@@ -3,16 +3,18 @@ Projeto resumido da linguagem DL
 PROGRAM				::= programa ID BLOCK
 BLOCK				::= inicio STMTS fim
 STMTS				::= STMT; STMTS | ε
-STMT				::= BLOCK | DECL | ASSIGN | WRITE | IF
+STMT				::= BLOCK | DECL | ASSIGN | WRITE | IF | WHILE
 DECL     			::= TYPE ID
 ASSIGN   			::= ID = EXPR
 WRITE				::= escreva(ID)
 READ 				::= leia(ID)
 IF					::= se (EXPR) STMT
+WHILE 				::= enquanto (EXPR) STMT
 EXPR				::= EXPR "|" EQUALITY | EQUALITY
 EQUALITY			::= EQUALITY == REL | REL
 REL					::= REL < ARITH | REL <= ARITH | ARITH
-ARITH  				::= ARITH + TERM | ARITH - TERM | TERM
+ARITH  				::= ARITH + TERM | ARITH - TERM | TERM | POW
+POW					::= TERM ** POW | TERM
 TERM				::= TERM * UNARY | UNARY
 UNARY				::= - UNARY | FACTOR
 FACTOR				::= (EXPR) | ID | LIT_INT | LIT_REAL | LIT_BOOL | LIT_CIEN
