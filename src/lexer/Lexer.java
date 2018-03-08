@@ -132,7 +132,7 @@ public class Lexer {
 				do {
 					num += peek;
 					nextChar();
-				} while ( Character.isDigit(peek)|| peek == '^' );
+				} while ( Character.isDigit(peek)|| peek == '+'||peek == '-');
 				return new Token(Tag.LIT_REAL, num);
 			} else if ( isIdentifierStart(peek)  ) {
 				String id = "";
