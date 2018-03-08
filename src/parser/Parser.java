@@ -97,6 +97,7 @@ public class Parser {
 		case BEGIN: return block();
 		case INT: case REAL: case BOOL: return decl();
 		case WRITE: return writeStmt();
+		case READ: return readStmt();
 		case ID: return assign();
 		case IF: return ifStmt();
 		default: error("comando inválido");
