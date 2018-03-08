@@ -1,5 +1,7 @@
 programa teste inicio
-	inteiro a; inteiro b;
+	inteiro a; inteiro b; real c;
+	
+	c = 1.1e^-23;
 	a = 0; b = 10;
 	se (a <= 0 | b <= 0)
 		a = 100;

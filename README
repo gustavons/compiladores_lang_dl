@@ -14,7 +14,7 @@ REL					::= REL < ARITH | REL <= ARITH | ARITH
 ARITH  				::= ARITH + TERM | ARITH - TERM | TERM
 TERM				::= TERM * UNARY | UNARY
 UNARY				::= - UNARY | FACTOR
-FACTOR				::= (EXPR) | ID | LIT_INT | LIT_REAL | LIT_BOOL
+FACTOR				::= (EXPR) | ID | LIT_INT | LIT_REAL | LIT_BOOL | LIT_CIEN
 
 Definições Regulares
 LETTER		::= a | b | ... | z | A | B | ... Z | _
@@ -23,4 +23,5 @@ ID			::= LETTER (LETTER | DIGIT)*
 LIT_INT		::= DIGIT+
 LIT_REAL	::= DIGIT+ . DIGIT+ 
 LIT_BOOL	::= verdadeiro | falso
+LIT_CIEN    ::= DIGIT . DIGIT e^DIGIT+
 TYPE     	::= inteiro | real | booleano

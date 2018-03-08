@@ -115,15 +115,24 @@ public class Lexer {
 		default:
 			if (Character.isDigit(peek)) {
 				String num = "";
+				
+//				Inteiro
 				do {
 					num += peek;
 					nextChar();
 				} while( Character.isDigit(peek) );
 				if ( peek != '.' ) return new Token(Tag.LIT_INT, num);
+//				Real
 				do {
 					num += peek;
 					nextChar();
 				} while ( Character.isDigit(peek) );
+				if ( peek != 'e' ) return new Token(Tag.LIT_REAL, num);
+//				Cientifico 
+				do {
+					num += peek;
+					nextChar();
+				} while ( Character.isDigit(peek)|| peek == '^' );
 				return new Token(Tag.LIT_REAL, num);
 			} else if ( isIdentifierStart(peek)  ) {
 				String id = "";

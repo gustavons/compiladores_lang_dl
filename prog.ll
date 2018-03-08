@@ -8,20 +8,25 @@ define i32 @main() nounwind {
 store i32 0, i32* %1
 %2 = alloca i32
 store i32 0, i32* %2
+%3 = alloca double
+store double 0.0, double* %3
+%4 = sitofp i32 23 to double
+%5 = fsub double 1.1e^, %4
+store double %5, double* %3
 store i32 0, i32* %1
 store i32 10, i32* %2
-%3 = load i32, i32* %1
-%4 = icmp sle i32 %3, 0
-br i1 %4, label %L1, label %L3
+%6 = load i32, i32* %1
+%7 = icmp sle i32 %6, 0
+br i1 %7, label %L1, label %L3
 L3:
-%5 = load i32, i32* %2
-%6 = icmp sle i32 %5, 0
-br i1 %6, label %L1, label %L2
+%8 = load i32, i32* %2
+%9 = icmp sle i32 %8, 0
+br i1 %9, label %L1, label %L2
 L1:
 store i32 100, i32* %1
 br label %L2
 L2:
-%7 = load i32, i32* %1
-%8 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds([4 x i8], [4 x i8]* @str_print_int, i32 0, i32 0), i32 %7) ; var %7
+%10 = load i32, i32* %1
+%11 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds([4 x i8], [4 x i8]* @str_print_int, i32 0, i32 0), i32 %10) ; var %10
 ret i32 0
 }
