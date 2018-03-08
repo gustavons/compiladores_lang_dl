@@ -7,6 +7,7 @@ STMT				::= BLOCK | DECL | ASSIGN | WRITE | IF
 DECL     			::= TYPE ID
 ASSIGN   			::= ID = EXPR
 WRITE				::= escreva(ID)
+READ 				::= leia(ID)
 IF					::= se (EXPR) STMT
 EXPR				::= EXPR "|" EQUALITY | EQUALITY
 EQUALITY			::= EQUALITY == REL | REL
@@ -23,5 +24,4 @@ ID			::= LETTER (LETTER | DIGIT)*
 LIT_INT		::= DIGIT+
 LIT_REAL	::= (DIGIT+ . DIGIT+) | (DIGIT . DIGIT e (+|-) DIGIT+)
 LIT_BOOL	::= verdadeiro | falso
-LIT_CIEN    ::= 
 TYPE     	::= inteiro | real | booleano
