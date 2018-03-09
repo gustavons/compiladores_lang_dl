@@ -8,6 +8,7 @@ public class Token {
 	public static final Token WRITE = new Token(Tag.WRITE, "escreva");
 	public static final Token READ = new Token(Tag.READ, "leia");
 	public static final Token IF = new Token(Tag.IF, "se");
+	public static final Token WHILE = new Token(Tag.WHILE, "enquanto");
 	public static final Token TRUE = new Token(Tag.TRUE, "verdadeiro");
 	public static final Token FALSE = new Token(Tag.FALSE, "falso");	
 	//Types

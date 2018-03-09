@@ -15,6 +15,7 @@ import inter.stmt.If;
 import inter.stmt.Program;
 import inter.stmt.Read;
 import inter.stmt.Stmt;
+import inter.stmt.While;
 import inter.stmt.Write;
 import lexer.Lexer;
 import lexer.Tag;
@@ -100,6 +101,7 @@ public class Parser {
 		case READ: return readStmt();
 		case ID: return assign();
 		case IF: return ifStmt();
+		case WHILE: return whileStmt();
 		default: error("comando inválido");
 		}
 		return null;
@@ -146,6 +148,15 @@ public class Parser {
 		match(Tag.RPAREN);
 		Stmt s1 = stmt();
 		return new If(e, s1);
+	}
+	
+	private Stmt whileStmt() {
+		match(Tag.WHILE);
+		match(Tag.LPAREN);
+		Expr e = expr();
+		match(Tag.RPAREN);
+		Stmt s1 = stmt();
+		return new While(e, s1);
 	}
 
 	private Expr expr() {

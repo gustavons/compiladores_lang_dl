@@ -3,11 +3,12 @@ programa teste inicio
 	
 	c = -1.1e-23;
 	a = 0; b = 10;
+	
 	se (c <= 0 | b <= 0)
 		a = 100;
 	escreva(a);
 	leia(a);
-	
+
 	
 fim.
 
