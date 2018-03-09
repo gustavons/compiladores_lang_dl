@@ -29,6 +29,7 @@ public class Lexer {
 		reserve(Token.WRITE);
 		reserve(Token.READ);
 		reserve(Token.IF);
+		reserve(Token.WHILE);
 		reserve(Token.TRUE);
 		reserve(Token.FALSE);
 		reserve(Token.INT);
