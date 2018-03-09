@@ -28,5 +28,7 @@ br label %L2
 L2:
 %10 = load i32, i32* %1
 %11 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds([4 x i8], [4 x i8]* @str_print_int, i32 0, i32 0), i32 %10) ; var %10
+%12 = load i32, i32* %1
+%13 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds([4 x i8], [4 x i8]* @str_print_int, i32 0, i32 0), i32 %12) ; var %12
 ret i32 0
 }
