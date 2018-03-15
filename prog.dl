@@ -1,5 +1,5 @@
 programa teste inicio
-	inteiro a; inteiro b; real c; inteiro d;
+	inteiro a; inteiro b; real c; inteiro d; booleano e;
 	
 	c = -1.1e-23;
 	a = 0; b = 10;
@@ -13,7 +13,7 @@ programa teste inicio
     enquanto (c <= b)
         escreva(b);
 
-    d = 10 ** 2;
+    c = (c + 2) ** 2 ** 5;
 
     escreva(d);
 	

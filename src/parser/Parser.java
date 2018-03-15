@@ -205,13 +205,24 @@ public class Parser {
 		}
 		return e;
 	}
+
+
 		
 	private Expr unary() {
 		if ( look.tag() == Tag.SUB ) {
 			Token op = move();
 			return new Unary(op, unary());
 		} else
-			return factor();
+			return pow();
+	}
+
+	private Expr pow(){
+		Expr e = factor();
+		while(	look.tag() == Tag.POW ) {
+			Token op = move();
+			e = new Bin(op, e, factor());
+		}
+		return e;
 	}
 
 	private Expr factor() {
