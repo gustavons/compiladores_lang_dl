@@ -88,14 +88,14 @@ public final class CodeEmitter {
 				+ id + ") ; var " + id );
 	}
 	public void emitRead(Expr id) {
-//		String str = "[4 x i8], [4 x i8]* @str_print_int";
-//		if ( id.type() == Token.REAL )
-//			str = "[7 x i8], [7 x i8]* @str_print_double";
-//		Temp tPrint = new Temp(id.type());
-//		emit( tPrint + " = call i32 (i8*, ...) @printf(i8* getelementptr inbounds"
-//				+ "(" + str + ", i32 0, i32 0), "
-//				+ CodeEmitter.codeType(id.type()) + " "
-//				+ id + ") ; var " + id );
+		String str = "[3 x i8], [3 x i8]* @str_scan_int";
+		if ( id.type() == Token.REAL )
+			str = "[4 x i8], [4 x i8]* @str_scan_double";
+		Temp tPrint = new Temp(id.type());
+		emit( tPrint + " = call i32 (i8*, ...) @__isoc99_scanf(i8* getelementptr inbounds ("+
+				str+", i32 0, i32 0), "
+				+ CodeEmitter.codeType(id.type()) + "* "
+				+ id + ");" );
 	}
 
 	/*public static String codeType(Token type) {
@@ -140,8 +140,11 @@ public final class CodeEmitter {
 		emit(";LLVM version 3.8.0 (http://llvm.org/)");
 		emit(";program " + name.lexeme());
 		emit("declare i32 @printf(i8*, ...) nounwind");
-		emit("@str_print_int = private unnamed_addr constant [4 x i8] c\"%d\\0A\\00\", align 1");
+        emit("declare i32 @__isoc99_scanf(i8*, ...) #1");
+        emit("@str_print_int = private unnamed_addr constant [4 x i8] c\"%d\\0A\\00\", align 1");
 		emit("@str_print_double = private unnamed_addr constant [7 x i8] c\"%.2lf\\0A\\00\", align 1");
+        emit("@str_scan_double = private unnamed_addr constant [4 x i8] c\"%lf\\00\", align 1");
+		emit("@str_scan_int = private unnamed_addr constant [3 x i8] c\"%d\\00\", align 1");
 		emit("define i32 @main() nounwind {");
 	}
 

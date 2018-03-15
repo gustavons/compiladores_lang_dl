@@ -16,7 +16,7 @@ public class Read  extends Stmt {
 	@Override
 	public void gen() {
 		Expr e = id.gen();
-		code.emitRead(e);
+		code.emitRead(id.getAddress());
 	}
 
 	@Override

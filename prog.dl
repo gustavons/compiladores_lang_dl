@@ -6,9 +6,9 @@ programa teste inicio
 	
 	se (c <= 0 | b <= 0)
 		a = 100;
-	escreva(a);
-	leia(a);
 
+	leia(a);
+    escreva(a);
 	
 fim.
 
