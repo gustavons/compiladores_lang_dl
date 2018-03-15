@@ -48,6 +48,12 @@ public final class CodeEmitter {
 				codeType(op1.type()) + " " + op1 + ", " + op2 ); 
 	}
 
+	public void emitPow(Expr dest, Expr op1, Expr op2, Token instr) {
+
+		emit( dest + " =  call double @pow( double " + op1 + ", double " + op2 + ")");
+
+	}
+
 	//%26 = sitofp i32 1 to double
 	public void emitConvert(Expr dest, Expr op) {
 		if ( dest.type().isInt() )
@@ -145,6 +151,7 @@ public final class CodeEmitter {
 		emit("@str_print_double = private unnamed_addr constant [7 x i8] c\"%.2lf\\0A\\00\", align 1");
         emit("@str_scan_double = private unnamed_addr constant [4 x i8] c\"%lf\\00\", align 1");
 		emit("@str_scan_int = private unnamed_addr constant [3 x i8] c\"%d\\00\", align 1");
+		emit("declare double @pow(double, double) #1");
 		emit("define i32 @main() nounwind {");
 	}
 

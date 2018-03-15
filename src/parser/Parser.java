@@ -5,6 +5,7 @@ import inter.expr.Expr;
 import inter.expr.Id;
 import inter.expr.Literal;
 import inter.expr.arith.Bin;
+import inter.expr.arith.Pow;
 import inter.expr.arith.Unary;
 import inter.expr.logical.Or;
 import inter.expr.logical.Rel;
@@ -220,7 +221,7 @@ public class Parser {
 		Expr e = factor();
 		while(	look.tag() == Tag.POW ) {
 			Token op = move();
-			e = new Bin(op, e, factor());
+			e = new Pow(op, e, factor());
 		}
 		return e;
 	}
