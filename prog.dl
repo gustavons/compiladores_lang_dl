@@ -1,16 +1,13 @@
 programa teste inicio
-	inteiro a;
-	a=2;
+
 	real b;
-    real c;
-	b=3;
-
-	c = b**a;
+    b = 0;
 	
-	se (b <= 0)
-		a = 100;
-
-    escreva(c);
+	enquanto (b <= 5)
+	inicio
+		b = b+1;
+		escreva(b);
+    fim;
 
 	
 fim.

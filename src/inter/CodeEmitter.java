@@ -48,6 +48,7 @@ public final class CodeEmitter {
 				codeType(op1.type()) + " " + op1 + ", " + op2 ); 
 	}
 
+	// Pow
 	public void emitPow(Expr dest, Expr op1, Expr op2, Token instr) {
 
 		emit( dest + " =  call double @pow( double " + op1 + ", double " + op2 + ")");
