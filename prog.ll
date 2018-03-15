@@ -33,5 +33,15 @@ L2:
 %11 = call i32 (i8*, ...) @__isoc99_scanf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @str_scan_int, i32 0, i32 0), i32* %1);
 %12 = load i32, i32* %1
 %13 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds([4 x i8], [4 x i8]* @str_print_int, i32 0, i32 0), i32 %12) ; var %12
+%14 = load double, double* %3
+%15 = load i32, i32* %2
+%16 = sitofp i32 %15 to double
+%17 = fcmp ole double %14, %16
+br i1 %17, label %L4, label %L5
+L4:
+%18 = load i32, i32* %2
+%19 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds([4 x i8], [4 x i8]* @str_print_int, i32 0, i32 0), i32 %18) ; var %18
+br label %L5
+L5:
 ret i32 0
 }

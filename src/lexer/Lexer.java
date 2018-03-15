@@ -89,6 +89,10 @@ public class Lexer {
 			return Token.SUB;
 		case '*':
 			nextChar();
+			if (peek == '*'){
+				nextChar();
+				return Token.POW;
+			}
 			return Token.MUL;
 		case '|':
 			nextChar();

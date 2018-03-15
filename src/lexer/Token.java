@@ -21,6 +21,7 @@ public class Token {
 	public static final Token SUM = new Token(Tag.SUM, "+");
 	public static final Token SUB = new Token(Tag.SUB, "-");
 	public static final Token MUL = new Token(Tag.MUL, "*");
+	public static final Token POW = new Token(Tag.POW, "**");
 	//Logical Operators
 	public static final Token OR = new Token(Tag.OR, "|");
 	//Relational Operators

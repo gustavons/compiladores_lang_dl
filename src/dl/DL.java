@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import lexer.Lexer;
+import lexer.Token;
 import parser.Parser;
 
 public class DL {
@@ -14,6 +15,9 @@ public class DL {
 		String sName = "prog.dl";
 		String pName = sName.substring(0, sName.lastIndexOf("."));
 		String iName = pName +  ".ll";
+
+
+
 
 		//Análise
 		File sourceFile = new File(sName);
@@ -25,6 +29,7 @@ public class DL {
 		System.out.println(parser.parseTree());
 		System.out.println(parser.code());
 		System.out.println("finalizado");
+
 
 		try {
 			//Construindo arquivos

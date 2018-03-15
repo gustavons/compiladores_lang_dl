@@ -13,11 +13,11 @@ WHILE 				::= enquanto (EXPR) STMT
 EXPR				::= EXPR "|" EQUALITY | EQUALITY
 EQUALITY			::= EQUALITY == REL | REL
 REL					::= REL < ARITH | REL <= ARITH | ARITH
-ARITH  				::= ARITH + TERM | ARITH - TERM | TERM | POW
-POW					::= TERM ** POW | TERM
+ARITH  				::= ARITH + TERM | ARITH - TERM | TERM
 TERM				::= TERM * UNARY | UNARY
-UNARY				::= - UNARY | FACTOR
-FACTOR				::= (EXPR) | ID | LIT_INT | LIT_REAL | LIT_BOOL 
+UNARY				::= - UNARY | POW
+POW                 ::= FACTOR ** POW | FACTOR
+FACTOR				::= (EXPR) | ID | LIT_INT | LIT_REAL | LIT_BOOL
 
 Definições Regulares
 LETTER		::= a | b | ... | z | A | B | ... Z | _

@@ -1,5 +1,5 @@
 programa teste inicio
-	inteiro a; inteiro b; real c;
+	inteiro a; inteiro b; real c; inteiro d;
 	
 	c = -1.1e-23;
 	a = 0; b = 10;
@@ -9,6 +9,13 @@ programa teste inicio
 
 	leia(a);
     escreva(a);
+
+    enquanto (c <= b)
+        escreva(b);
+
+    d = 10 ** 2;
+
+    escreva(d);
 	
 fim.
 

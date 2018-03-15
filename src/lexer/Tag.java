@@ -8,7 +8,7 @@ public enum Tag {
 	//Assign
 	ASSIGN("ASSIGN"),
 	//Arithmetical Operators
-	SUM("SUM"), SUB("SUB"), MUL("MUL"), 
+	SUM("SUM"), SUB("SUB"), MUL("MUL"), POW("POW"),
 	//Logical Operators
 	OR("OR"),
 	//Relational Operators
