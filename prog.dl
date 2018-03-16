@@ -1,8 +1,11 @@
 programa teste inicio
-
+    inteiro a;
 	real b;
     b = 0;
-	
+    a = 2;
+
+	b = a**a;
+
 	enquanto (b <= 5)
 	inicio
 		b = b+1;

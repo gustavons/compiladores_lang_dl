@@ -18,7 +18,7 @@ public class Pow extends Expr {
 //        type = Token.maxNumType( e1.type(), e2.type() );
         if ( e1.type().isReal()||e2.type().isReal())
             type = Token.REAL;
-        else if ( e1.type().isInt() && e2.type().isInt()){
+        if ( e1.type().isInt() && e2.type().isInt()){
             type = Token.INT;
         }
         else
@@ -40,7 +40,8 @@ public class Pow extends Expr {
             Temp f = new Temp(Token.REAL);
             code.emitConvert(f, op1);
             op1 = f;
-        }else if(e2.type().isInt()){
+        }
+        if(e2.type().isInt()){
             Temp g = new Temp(Token.REAL);
             code.emitConvert(g, op2);
             op2 = g;
