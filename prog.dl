@@ -4,7 +4,7 @@ programa teste inicio
     b = 0;
     a = 2;
 
-	b = a**a;
+	b = 2**5.0;
 
 	enquanto (b <= 5)
 	inicio

@@ -15,27 +15,22 @@ store double 0.0, double* %2
 %3 = sitofp i32 0 to double
 store double %3, double* %2
 store i32 2, i32* %1
-%4 = load i32, i32* %1
-%5 = load i32, i32* %1
-%6 = sitofp i32 %4 to double
-%7 = sitofp i32 %5 to double
-%8 =  call double @pow( double %6, double %7)
-%9 = fptosi double %8 to i32
-%10 = sitofp i32 %9 to double
-store double %10, double* %2
+%4 = sitofp i32 2 to double
+%5 =  call double @pow( double %4, double 5.0)
+store double %5, double* %2
 br label %L1
 L1:
-%11 = load double, double* %2
-%12 = sitofp i32 5 to double
-%13 = fcmp ole double %11, %12
-br i1 %13, label %L2, label %L3
+%6 = load double, double* %2
+%7 = sitofp i32 5 to double
+%8 = fcmp ole double %6, %7
+br i1 %8, label %L2, label %L3
 L2:
-%14 = load double, double* %2
-%15 = sitofp i32 1 to double
-%16 = fadd double %14, %15
-store double %16, double* %2
-%17 = load double, double* %2
-%18 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds([7 x i8], [7 x i8]* @str_print_double, i32 0, i32 0), double %17) ; var %17
+%9 = load double, double* %2
+%10 = sitofp i32 1 to double
+%11 = fadd double %9, %10
+store double %11, double* %2
+%12 = load double, double* %2
+%13 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds([7 x i8], [7 x i8]* @str_print_double, i32 0, i32 0), double %12) ; var %12
 br label %L1
 L3:
 ret i32 0

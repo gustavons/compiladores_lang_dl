@@ -18,7 +18,7 @@ public class Pow extends Expr {
 //        type = Token.maxNumType( e1.type(), e2.type() );
         if ( e1.type().isReal()||e2.type().isReal())
             type = Token.REAL;
-        if ( e1.type().isInt() && e2.type().isInt()){
+        else if ( e1.type().isInt() && e2.type().isInt()){
             type = Token.INT;
         }
         else
